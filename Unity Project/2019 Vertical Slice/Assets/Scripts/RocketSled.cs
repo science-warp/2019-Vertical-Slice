@@ -18,8 +18,17 @@ public class RocketSled : MonoBehaviour
 
     public FollowObject followCamera;
 
+    public float velocityThreshold = 1;
+
+    public GameObject loadPrefab;
+
+    private Vector3 loadPosition;
+
     private void Start()
     {
+
+        loadPosition = load.transform.position;
+
         followCamera.ObjectToFollow = gameObject;
         startPoint = transform.position;
         foreach(GameObject p in rocketParticles)
@@ -32,14 +41,17 @@ public class RocketSled : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            LaunchSled();
-        }
     }
 
     public void LaunchSled()
     {
+        StartCoroutine(LaunchSledCoroutine());
+    }
+
+    public void LaunchSled(float force)
+    {
+        forceToApply = force;
+
         StartCoroutine(LaunchSledCoroutine());
     }
 
@@ -57,12 +69,25 @@ public class RocketSled : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, endPoint, secondIncrement * Time.deltaTime);
             yield return null;
         }
-        followCamera.newFollow(load.gameObject);
+        followCamera.newFollow(load.gameObject, false);
         load.transform.parent = null;
         load.AddForce(new Vector3(forceToApply, 0, 0));
 
+
+        while(load.velocity.magnitude > velocityThreshold)
+       {
+            //do nothing, yay
+        }
+
+
         StartCoroutine(returnSledCoroutine());
 
+    }
+
+    private IEnumerator returnCamera()
+    {
+        yield return new WaitForSeconds(5);
+        followCamera.newFollow(gameObject, true);
     }
 
     private IEnumerator returnSledCoroutine()
@@ -71,7 +96,8 @@ public class RocketSled : MonoBehaviour
         {
             p.SetActive(false);
         }
-        yield return new WaitForSeconds(2);
+       // yield return new WaitForSeconds(2);
+        StartCoroutine(returnCamera());
        
         float returnTime = 0;
         while (returnTime < launchTime)
@@ -80,6 +106,10 @@ public class RocketSled : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, startPoint, secondIncrement * Time.deltaTime);
             yield return null;
         }
+
+        //spawn a new weight
+        GameObject newLoad = Instantiate(loadPrefab, loadPosition, Quaternion.identity, transform);
+        load = newLoad.GetComponent<Rigidbody>();
     }
 
 }
