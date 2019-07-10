@@ -54,6 +54,9 @@ public class DepthArrowControl : MonoBehaviour
 
         topScaleStepSize = (deepestArrowHeight - shallowestArrowHeight) / 100f;
         bottomPosStepSize = (deepestArrowPos - shallowestArrowPos) / 100f;
+
+        arrowTop.localScale = new Vector3(arrowTop.localScale.x, shallowestArrowHeight, arrowTop.localScale.z);
+        arrowBottom.anchoredPosition = new Vector3(arrowBottom.anchoredPosition.x, shallowestArrowPos);
     }
 
     public void setDepth(float newMaxDepth)
@@ -73,13 +76,25 @@ public class DepthArrowControl : MonoBehaviour
 
         //now we handle sizing
         //set height of top portion
+
+
+        float newPos = shallowestArrowPos + (bottomPosStepSize * currentDepthPercentage);
+        Debug.Log(newPos);
+
         arrowTop.localScale = (new Vector3(arrowTop.localScale.x, shallowestArrowHeight + (topScaleStepSize * currentDepthPercentage), arrowTop.localScale.z));
-        arrowBottom.position = (new Vector3(arrowBottom.position.x, shallowestArrowPos + bottomPosStepSize * currentDepthPercentage, arrowBottom.position.z));
+        arrowBottom.anchoredPosition = (new Vector3(arrowBottom.anchoredPosition.x, newPos));
+        Debug.Log(arrowBottom.position.y);
 
         //now we handle the color.
         //first determine which step.
 
         int colorStepNumber = (int)Mathf.Floor(depth / colorStepSize);
+
+        //clamp to prevent indexOutOfRange
+        if(colorStepNumber >= depthColors.Length)
+        {
+            colorStepNumber = depthColors.Length - 1;
+        }
 
         arrowTopImage.color = depthColors[colorStepNumber];
         arrowBottomImage.color = depthColors[colorStepNumber];
