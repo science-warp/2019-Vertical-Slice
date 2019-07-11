@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterBeta
+  m_Name: VectorWater
   m_Shader: {fileID: -6465566751694194690, guid: c6a33c476887d3e44ae47a38125533eb,
     type: 3}
   m_ShaderKeywords: 
@@ -95,7 +95,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_36410FE1: 0
-    - Vector1_604D800B: 0.738
+    - Vector1_604D800B: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -111,8 +111,8 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 0.71
-    - _Opacity: 0.798
+    - _Offset: 0
+    - _Opacity: 0.506
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -123,7 +123,7 @@ Material:
     - _Surface: 0
     - _Transparency: 0.744
     - _UVSec: 0
-    - _WaveHeight: 0.001
+    - _WaveHeight: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
