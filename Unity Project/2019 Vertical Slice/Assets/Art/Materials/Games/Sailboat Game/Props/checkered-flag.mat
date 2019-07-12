@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: green-flag
+  m_Name: checkered-flag
   m_Shader: {fileID: -6465566751694194690, guid: ef931f3634b45ac4bbc90c0e08ff8672,
     type: 3}
   m_ShaderKeywords: 
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_44855236:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f1e1727d24cd74f489859551414df284, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -53,8 +53,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2D6FB53D: 0.11
-    - Vector1_884FF0D7: 1
+    - Vector1_2D6FB53D: 0.5
+    - Vector1_884FF0D7: 0.615
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -78,7 +78,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_702E3E7: {r: 0, g: 0.6415094, b: 0.08029605, a: 1}
+    - Color_702E3E7: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
