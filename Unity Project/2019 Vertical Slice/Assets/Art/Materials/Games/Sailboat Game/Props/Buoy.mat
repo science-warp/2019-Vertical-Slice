@@ -66,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2D6FB53D: 0.29
+    - Vector1_2D6FB53D: 0.09
     - Vector1_884FF0D7: 1
     - _AlphaClip: 0
     - _Blend: 0
@@ -75,7 +75,7 @@ Material:
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FirstEdge: 0
+    - _FirstEdge: 0.164
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
