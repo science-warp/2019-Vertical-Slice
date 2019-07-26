@@ -15,7 +15,7 @@ public class LevelSelectMenu : MonoBehaviour
   //  [Tooltip("The X and Y positions of the menu's transform when it is maximized and in use.")]
     //public float maximizedY;
 
-    bool menuMaximized = false;
+    public bool menuMaximized = false;
 
     [Tooltip("Number of seconds it takes to minimize the menu.")]
     public float minTime = .6f;
@@ -39,7 +39,7 @@ public class LevelSelectMenu : MonoBehaviour
         
     }
 
-    public void toggleMenu()
+    public void ToggleMenu()
     {
 
         if (menuMaximized)//PUT IT BAAACK
