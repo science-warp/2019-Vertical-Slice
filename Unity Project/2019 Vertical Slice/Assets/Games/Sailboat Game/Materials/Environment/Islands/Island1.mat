@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Island1
-  m_Shader: {fileID: -6465566751694194690, guid: ef931f3634b45ac4bbc90c0e08ff8672,
+  m_Shader: {fileID: -6465566751694194690, guid: 5a071afa74d729a43be4ebb46e8f02fc,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,12 +20,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_1BEE0F04:
+        m_Texture: {fileID: 2800000, guid: e74777964a6cfe642a72d819e4ba3215, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_44855236:
-        m_Texture: {fileID: 2800000, guid: c6864cf9df5c4fc428ac12a1fd96a979, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4261383553e56b548ba06169984b5e7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_958ADB69:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_B3C70DB3:
+        m_Texture: {fileID: 2800000, guid: c10e391537c16fb49bae15c461a364df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_B7CC9873:
-        m_Texture: {fileID: 2800000, guid: c6864cf9df5c4fc428ac12a1fd96a979, type: 3}
+        m_Texture: {fileID: 2800000, guid: 38b1a743a1d4df944b7e8ad3e792ee84, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_FE4266C7:
@@ -33,8 +45,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 4261383553e56b548ba06169984b5e7c, type: 3}
-        m_Scale: {x: 200, y: 200}
+        m_Texture: {fileID: 2800000, guid: c6864cf9df5c4fc428ac12a1fd96a979, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
@@ -45,8 +57,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4261383553e56b548ba06169984b5e7c, type: 3}
-        m_Scale: {x: 200, y: 200}
+        m_Texture: {fileID: 2800000, guid: c6864cf9df5c4fc428ac12a1fd96a979, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -61,11 +73,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2D6FB53D: 0.42
+    - Vector1_2D6FB53D: 0
+    - Vector1_3637750E: 35.3
     - Vector1_54A17A13: 100
-    - Vector1_884FF0D7: 0
+    - Vector1_884FF0D7: 0.56
     - Vector1_BE7DA6FE: 25
-    - Vector1_E91E6EDC: 1
+    - Vector1_C37ACA0E: 0.23
+    - Vector1_E91E6EDC: 24.1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -73,7 +87,7 @@ Material:
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FirstEdge: 0.65
+    - _FirstEdge: 0.36
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
