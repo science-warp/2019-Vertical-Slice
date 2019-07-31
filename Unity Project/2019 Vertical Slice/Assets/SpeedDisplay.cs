@@ -48,6 +48,27 @@ public class SpeedDisplay : MonoBehaviour
 
     private void Update()
     {
-        
+        currentPos = sailboat.transform.position;
+        //calculate speed in mps then convert, if need be.
+        float velocity = Vector3.Distance(currentPos, prevPos) / Time.deltaTime;
+
+        //so we have the mps
+        switch (_optionsManager.currentSpeedUnit)
+        {
+            case OptionsManager.speedUnit.KTS:
+                velocity *= 1.94384f;
+                break;
+            case OptionsManager.speedUnit.MPS:
+                velocity *= 2.23694f;
+                break;
+            default:
+                break;
+
+        }
+
+        //now we need an integer so we don't hate ourselves
+        speedValue.text = ((int)velocity).ToString();
+
+        prevPos = currentPos;
     }
 }

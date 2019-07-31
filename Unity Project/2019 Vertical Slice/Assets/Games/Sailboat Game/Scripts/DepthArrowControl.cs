@@ -85,7 +85,7 @@ public class DepthArrowControl : MonoBehaviour
         currentDepthPercentage = depth / maxDepth * 100f;
 
         //update text component
-        depthText.text = ((int)depth).ToString() + "ft"; //the units will likely have to be modified at some point if we want to allow for different units
+        depthText.text = ((int)depth).ToString(); //the units will likely have to be modified at some point if we want to allow for different units
 
         //handle sizing
         //set height of top portion
