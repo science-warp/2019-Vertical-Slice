@@ -12,6 +12,8 @@ public class Wind : MonoBehaviour
     public ParticleSystem leaves;
     public ParticleSystem air;
 
+    public RectTransform windArrow;
+
     ParticleSystem.MainModule leafMain;
     ParticleSystem.MainModule airMain;
 
@@ -42,6 +44,7 @@ public class Wind : MonoBehaviour
     public void setWind(Vector3 direction, float speed)
     {
         transform.eulerAngles = direction;
+        windArrow.eulerAngles = new Vector3(0, 0, direction.y);
 
         leafMain.startSpeed = speed;
         airMain.startSpeed = speed;
