@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1246,6 +1246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c73133015f1b641b9655ceff53f249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSpeedUnit: 2
+  currentDistanceUnit: 1
 --- !u!4 &1035030460
 Transform:
   m_ObjectHideFlags: 0
