@@ -17,7 +17,7 @@ public class SailboatCompass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, (-1* sailboatObject.transform.rotation.y), transform.rotation.w);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, (-1*sailboatObject.transform.eulerAngles.y));
   
     }
 }
