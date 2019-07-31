@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935473477278869424}
   - component: {fileID: 365946293841457564}
+  - component: {fileID: 5039687910713599100}
   m_Layer: 0
   m_Name: Tree-Leafy
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 994118655814194058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -37.8, y: -24.6, z: 21.2}
-  m_LocalScale: {x: 0.73235947, y: 0.73235947, z: 0.73235947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 765621284550106841}
   m_Father: {fileID: 0}
@@ -45,6 +46,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 0}
+--- !u!205 &5039687910713599100
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994118655814194058}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 2.7000084, y: 11.800001, z: 0}
+  m_Size: 45.18203
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.026233125
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1428884124264566463}
+  m_Enabled: 1
 --- !u!1 &8405810367015447293
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,13 +90,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8405810367015447293}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.7, y: 11.8, z: 0}
-  m_LocalScale: {x: 4.5182, y: 4.5182, z: 4.5182}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children: []
   m_Father: {fileID: 935473477278869424}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3819359224555279653
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84,7 +104,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8405810367015447293}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1428884124264566463
 MeshRenderer:
   m_ObjectHideFlags: 0

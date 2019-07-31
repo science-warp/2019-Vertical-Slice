@@ -12,9 +12,6 @@ public class CoursesManager : MonoBehaviour
 
     public GameObject playerBoat;
 
-    public float fadeTime = .2f;
-    public float holdTime = .5f;
-
     public LevelSelectMenu _levelSelectMenu;
 
     public TMPro.TextMeshProUGUI courseDisplay;
@@ -72,7 +69,7 @@ public class CoursesManager : MonoBehaviour
         {
             _levelSelectMenu.ToggleMenu();
         }
-       // StartCoroutine(moveBoat(new Vector3(courses[courseNumber].startPoint.position.x, playerBoat.transform.position.y, courses[courseNumber].startPoint.position.z), courseNumber + 1));
+       
     }
 
 
