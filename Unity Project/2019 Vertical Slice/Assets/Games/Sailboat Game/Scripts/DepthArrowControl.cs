@@ -48,6 +48,7 @@ public class DepthArrowControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set up the starting specs
         setDepth(maxDepth);
 
         //calculate step sizes;
@@ -59,35 +60,46 @@ public class DepthArrowControl : MonoBehaviour
         arrowBottom.anchoredPosition = new Vector3(arrowBottom.anchoredPosition.x, shallowestArrowPos);
     }
 
+    //
+    /// <summary>
+    /// Allows for the maximum depth to be changed. I don't know why you'd need this, but it's here if you want it.
+    /// </summary>
+    /// <param name="newMaxDepth">The new value of maxDepth</param>
     public void setDepth(float newMaxDepth)
     {
+        //set maxDepth variable
         maxDepth = newMaxDepth;
 
+        //adjust step size.
         colorStepSize = maxDepth / depthColors.Length;
     }
 
     //this should be called in the Update function of the boat
+    /// <summary>
+    /// Updates the visuals given the depth of the water the boat is in at a given moment
+    /// </summary>
+    /// <param name="depth">Current water depth.</param>
     public void updateDepth(float depth)
     {
         //calculate percentage
         currentDepthPercentage = depth / maxDepth * 100f;
 
-        depthText.text = ((int)depth).ToString() + "ft";
+        //update text component
+        depthText.text = ((int)depth).ToString() + "ft"; //the units will likely have to be modified at some point if we want to allow for different units
 
-        //now we handle sizing
+        //handle sizing
         //set height of top portion
-
-
         float newPos = shallowestArrowPos + (bottomPosStepSize * currentDepthPercentage);
-        Debug.Log(newPos);
+        
 
         arrowTop.localScale = (new Vector3(arrowTop.localScale.x, shallowestArrowHeight + (topScaleStepSize * currentDepthPercentage), arrowTop.localScale.z));
+
+        //set position of bottom portion (and text, which is a child of bottom portion)
         arrowBottom.anchoredPosition = (new Vector3(arrowBottom.anchoredPosition.x, newPos));
-        Debug.Log(arrowBottom.position.y);
+
 
         //now we handle the color.
         //first determine which step.
-
         int colorStepNumber = (int)Mathf.Floor(depth / colorStepSize);
 
         //clamp to prevent indexOutOfRange
@@ -96,6 +108,7 @@ public class DepthArrowControl : MonoBehaviour
             colorStepNumber = depthColors.Length - 1;
         }
 
+        //set color of both components
         arrowTopImage.color = depthColors[colorStepNumber];
         arrowBottomImage.color = depthColors[colorStepNumber];
     }

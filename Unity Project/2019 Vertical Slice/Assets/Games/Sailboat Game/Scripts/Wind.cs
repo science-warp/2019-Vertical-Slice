@@ -25,6 +25,9 @@ public class Wind : MonoBehaviour
         ToggleWind();
     }
 
+    /// <summary>
+    /// Toggles wind on and off.
+    /// </summary>
     public void ToggleWind()
     {
         if (isOn)
@@ -41,6 +44,7 @@ public class Wind : MonoBehaviour
         }
     }
 
+    //sets wind direction - handles visualization and UI.
     public void setWind(Vector3 direction, float speed)
     {
         transform.eulerAngles = direction;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HullRenderer : MonoBehaviour
 {
-
+    //NOTE: This script is not currently in use but has been left in the project as reference.
     public MeshRenderer meshRenderer;
 
     public Transform sailboatObject;

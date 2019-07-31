@@ -15,6 +15,7 @@ public class LevelSelectMenu : MonoBehaviour
   //  [Tooltip("The X and Y positions of the menu's transform when it is maximized and in use.")]
     //public float maximizedY;
 
+        //Is the menu out or stowed?
     public bool menuMaximized = false;
 
     [Tooltip("Number of seconds it takes to minimize the menu.")]
@@ -25,11 +26,14 @@ public class LevelSelectMenu : MonoBehaviour
 
     RectTransform thisRect;
 
+
+    //The curve that drives the entrance motion of the menu
     public AnimationCurve entranceCurve;
 
     // Start is called before the first frame update
     void Start()
     {
+        //grab and cache the RectTransform component
         thisRect = GetComponent<RectTransform>();
     }
 

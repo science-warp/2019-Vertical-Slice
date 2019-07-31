@@ -17,6 +17,7 @@ public class SailboatCompass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //adjusts the appearance of the boat icon in accordance to the real boat's rotation 
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, (-1*sailboatObject.transform.eulerAngles.y));
   
     }

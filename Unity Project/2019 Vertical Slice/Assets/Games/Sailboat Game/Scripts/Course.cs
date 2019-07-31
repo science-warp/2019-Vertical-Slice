@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Course : MonoBehaviour
 {
-
+    /// <summary>
+    /// The start point of the course.
+    /// </summary>
     public Transform startPoint;
 
 
