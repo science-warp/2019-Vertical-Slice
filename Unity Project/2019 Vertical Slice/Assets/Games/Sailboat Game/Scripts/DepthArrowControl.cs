@@ -20,7 +20,8 @@ public class DepthArrowControl : MonoBehaviour
     //the size of color/depth steps in the contour/depth map. Calculated based upon max depth and number of color values.
     float colorStepSize;
 
-    public TMPro.TextMeshProUGUI depthText;
+    public TMPro.TextMeshProUGUI depthValue;
+    public TextMeshProUGUI depthUnits;
 
     [Tooltip("The 0th element is for the shallowest depth, and the nth is for deepest depth. This assumes consistently sized depth steps")]
     public Color[] depthColors;
@@ -44,10 +45,35 @@ public class DepthArrowControl : MonoBehaviour
     [Tooltip("The depth of the deepest part of the map.")]
     public float maxDepth;
 
+    OptionsManager _optionsManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        //oh hey we need units!
+        _optionsManager = GameObject.FindObjectOfType<OptionsManager>();
+
+        string units = "ft";
+        float multiplier = 1f;
+
+        switch (_optionsManager.currentDistanceUnit)
+        {
+            case OptionsManager.distanceUnit.M:
+                multiplier *= 0.3048f;
+                units = "m";
+                break;
+            default:
+                break;
+
+        }
+
+        depthUnits.text = units;
+
+        //multiply maxDepth because it's set in feet and I don't wanna commit a murder
+        maxDepth *= multiplier;
+
         //set up the starting specs
         setDepth(maxDepth);
 
@@ -85,7 +111,7 @@ public class DepthArrowControl : MonoBehaviour
         currentDepthPercentage = depth / maxDepth * 100f;
 
         //update text component
-        depthText.text = ((int)depth).ToString(); //the units will likely have to be modified at some point if we want to allow for different units
+        depthValue.text = ((int)depth).ToString(); //the units will likely have to be modified at some point 
 
         //handle sizing
         //set height of top portion
