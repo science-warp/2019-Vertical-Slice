@@ -8,6 +8,7 @@ public class FollowObject : MonoBehaviour
     public GameObject ObjectToFollow;
     private Vector3 offset;
 
+    public bool followRotation = false;
 
     //how long should the transition take?
     public float transitionTime = 4;
@@ -19,12 +20,24 @@ public class FollowObject : MonoBehaviour
     //don't modify from externally
     public bool isTransitioning = false;
 
+    float rotationOffset;
+    Vector3 startRot;
+
     private void Start()
     {
         //calculate offset
         offset = transform.position - ObjectToFollow.transform.position;
+        
+
+        //calculate rotation offset
+        //we only need the y rotation since we really only need this functionality in one place
+        //if you need it more than that, that's your own dang problem
+        rotationOffset = transform.eulerAngles.y - ObjectToFollow.transform.eulerAngles.y;
+        startRot = transform.eulerAngles;
     }
 
+
+    //WARNING: THE FOLLOWING METHOD IS NOT SET UP TO DO ANYTHING TO ROTATION. IF YOU NEED IT TO DO THAT, YOU DO IT
     /// <summary>
     /// Assigns a new object for the object the script is attached to to follow
     /// </summary>
@@ -40,9 +53,10 @@ public class FollowObject : MonoBehaviour
     }
 
 
+    //WARNING: THE FOLLOWING METHOD IS NOT SET UP TO DO ANYTHING TO ROTATION. IF YOU NEED IT TO DO THAT, YOU DO IT
     /// <summary>
     /// moves camera to a new object with the same offset
-    /// </summary>
+    /// </summary>4
     /// <param name="newFollow">The new object to follow</param>
     /// <returns></returns>
     public IEnumerator SmoothTransition(GameObject newFollow)
@@ -75,6 +89,7 @@ public class FollowObject : MonoBehaviour
         if (!isTransitioning)
         {
             transform.position = ObjectToFollow.transform.position + offset;
+            transform.eulerAngles = new Vector3(startRot.x, ObjectToFollow.transform.eulerAngles.y + rotationOffset, startRot.z);
         }
     }
 }
