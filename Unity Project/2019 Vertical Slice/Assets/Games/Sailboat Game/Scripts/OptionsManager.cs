@@ -5,7 +5,6 @@ using UnityEngine;
 public class OptionsManager : MonoBehaviour
 {
 
-
     public enum speedUnit { MPH, KTS, MPS};
 
     public enum distanceUnit { M, FT};
@@ -47,4 +46,5 @@ public class OptionsManager : MonoBehaviour
         currentDistanceUnit = unitToUse;
 
     }
+    
 }

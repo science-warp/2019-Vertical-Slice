@@ -89,7 +89,11 @@ public class FollowObject : MonoBehaviour
         if (!isTransitioning)
         {
             transform.position = ObjectToFollow.transform.position + offset;
-            transform.eulerAngles = new Vector3(startRot.x, ObjectToFollow.transform.eulerAngles.y + rotationOffset, startRot.z);
+
+            if (followRotation)
+            {
+                transform.eulerAngles = new Vector3(startRot.x, ObjectToFollow.transform.eulerAngles.y + rotationOffset, startRot.z);
+            }
         }
     }
 }

@@ -7,11 +7,17 @@ public class MainMenu : MonoBehaviour
 
 
     public int mainSceneIndex;
+    public int optionsSceneIndex;
 
 
     public void playGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneIndex);
+    }
+
+    public void openOptions()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(optionsSceneIndex);
     }
 
     // Start is called before the first frame update
